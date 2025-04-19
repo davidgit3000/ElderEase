@@ -21,7 +21,7 @@ const Placeholder = ({ title }) => (
 
 const Stack = createNativeStackNavigator();
 
-export default function App() {
+function WelcomeScreen() {
   return (
     <MedsProvider>
       <NavigationContainer>
