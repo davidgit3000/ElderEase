@@ -1,12 +1,26 @@
-import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import * as React from 'react';
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import { View, Text, StyleSheet } from 'react-native';
 
-export default function App() {
+function WelcomeScreen() {
   return (
     <View style={styles.container}>
       <Text style={styles.title}>Welcome to ElderEase!</Text>
       <Text style={styles.subtitle}>Your elderly care assistant.</Text>
     </View>
+  );
+}
+
+const Stack = createNativeStackNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator initialRouteName="Welcome">
+        <Stack.Screen name="Welcome" component={WelcomeScreen} options={{ title: 'ElderEase' }} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
