@@ -244,7 +244,7 @@ export default function Appointments({ navigation }) {
                 <TouchableOpacity onPress={handleEdit}><Text style={styles.pickerTitle}>Edit Details</Text></TouchableOpacity>
                 <TouchableOpacity onPress={handleComplete}><Text style={styles.pickerTitle}>Mark Completed</Text></TouchableOpacity>
                 <TouchableOpacity onPress={handleRemove}><Text style={styles.pickerTitle}>Remove Appointment</Text></TouchableOpacity>
-                <TouchableOpacity onPress={() => setActionModal(false)}><Text style={styles.pickerTitle}>Cancel</Text></TouchableOpacity>
+                <TouchableOpacity onPress={() => setActionModal(false)}><Text style={[styles.pickerTitle, styles.cancelBtnText]}>Cancel</Text></TouchableOpacity>
               </>
             )}
           </View>
@@ -532,8 +532,8 @@ const styles = StyleSheet.create({
     padding: 12,
   },
   cancelBtnText: {
-    color: '#222',
-    fontSize: 16,
+    color: 'red',
+    fontSize: 18,
     fontWeight: 'bold',
   },
   saveBtn: {
