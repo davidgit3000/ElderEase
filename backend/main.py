@@ -6,13 +6,10 @@ import os
 
 app = FastAPI(title="ElderEase API")
 
-# Load environment variables
-#FRONTEND_URL = os.getenv("FRONTEND_URL")
-
 # Configure CORS
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=[FRONTEND_URL],  # Frontend URL
+    allow_origins=["*"],  # Frontend URL
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
